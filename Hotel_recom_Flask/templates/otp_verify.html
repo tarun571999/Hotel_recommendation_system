@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="icon" href="{{ url_for('static', filename='image/favicon.png') }}" type="image/png">  
+        <title>Hotel Recommendation</title>
+        <style type="text/css">
+        body {
+         background-image:url("static/home.jpg");
+        background-repeat: no-repeat;
+        background-size:cover;
+      }
+	  .box{
+    width: 450px;
+    padding: 50px;
+    margin: auto;
+    text-align: center;
+	box-shadow: 1px 0px 10px black;
+	background: rgb(128,128,128,0.4);
+    border-radius: 24px;
+}
+.box input[type="number"]{
+    background: lightblue;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid turquoise;
+    padding: 12px 10px;
+    width: 200px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+	font-weight:bold;
+}
+.box input[type="number"]:focus{
+    width: 250px;
+    border-color: red;
+    outline: none;
+}
+
+     </style>
+    </head>
+    
+    <body >
+	<center><img style="width:70%;height:62%;position:relative;top:50%;" src="static/head.png" alt=""></center><br><br>
+	<div class="box">
+        <form class="" action="/otp" method="POST">
+           
+           <center>
+		   <h1 style="color:blue;margin-bottom:0px;margin-top:0px;">OTP VERIFICATION</h1> <hr>
+        
+            <h4 style="color:black; background-color: red;">{{message}}</h4>
+            
+            <h2>OTP is sent to your mail id</h2>
+			 <h3>Confirm OTP:</h3>  <input style="height:25px;" type="number" name="otp_val" placeholder="ENTER OTP" required=""><br>
+           
+        </center>
+           <button class="btn" style="background-color:green;padding:15px 32px;margin-left: 0px;color: white;position:relative;width:35%; font-weight:bold; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)" onmouseover="this.style.background='lightgray';this.style.color='black'" onmouseout="this.style.background='green';this.style.color='white'" class="tha" type="submit" name="otp_value" value = "{{otp}}" height="200">Proceed</button>
+       
+        </form><br>
+		<form action="/signup" class="">
+<input type="submit" style="background-color:red;padding:15px 32px;color: white;font-weight:bold; width:35%;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)" onmouseover="this.style.background='blue'" onmouseout="this.style.background='red'" value="Back">
+       
+   </form>
+	</div>
+    </body>
+</html>

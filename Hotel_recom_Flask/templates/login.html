@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="{{ url_for('static', filename='image/favicon.png') }}" type="image/png">  
+    <title>Hotel Recommendation</title>
+    <style>
+    #example1 {
+            background-image:url("static/home.jpg");
+            background-repeat: no-repeat;
+            background-size:cover;
+            }
+    body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial Rounded MT Bold;
+    background: url(pics/3.jpg) no-repeat center fixed;
+    background-size: cover;
+    overflow-y: hidden;
+}
+h2{
+    margin-left: 10px;
+}
+span.bel{
+    color: white;
+}
+span.tek{
+    color: rgb(0,200,225);
+}
+.box{
+    width: 250px;
+    padding: 50px;
+    margin: auto;
+    background: rgb(128,128,128,0.4);
+    text-align: center;
+    border-radius: 24px;
+	box-shadow: 1px 0px 10px black;
+	position:relative;
+	top:30%;
+}
+.box h1{
+    color: red;
+    font-weight: 500;
+}
+.box input[type="text"],.box input[type="password"]{
+    background: lightblue;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid turquoise;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;  
+    border-radius: 24px;
+    transition: 0.25s;
+	font-weight:bold;
+}
+.box input[type="text"]:focus,.box input[type="password"]:focus{
+    width: 250px;
+    border-color: red;
+    outline: none;
+}
+.box input[type="submit"]{
+	color: black;
+	background-color:green;
+	padding:15px 32px;
+	width: 50%;
+	color: white;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	position:relative;
+	left:2%;
+}
+
+.box input[type="submit"]:hover{
+    background: lightgray;
+    color: black;
+	cursor:pointer;
+	font-weight:bold;
+}
+.box p{
+    margin: 0;
+    padding-top: 30px;
+    text-align: center;
+    color: white;
+}
+.every{
+    width: 350px;
+    margin: auto;
+    position: relative;
+}
+a.signup{
+    background-color: blue;
+    padding: 6px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    bottom: 3%;
+    left: 75%;
+}
+a.signup:hover{
+    background: turquoise;
+}
+
+</style>
+</head>
+
+<body id="example1">
+	<center><img style="width:70%;height:62%;position:relative;top:50%;" src="static/head.png" alt=""></center><br><br><br>
+    <div class="box">
+    <form action="/exist" method="POST">
+        
+        <h1 style="margin-bottom:0px;">LOGIN</h1> <hr>
+        <h4 style="color: black; background-color: red;">{{message}}</h4>
+        <input type="text" name="uname" id="uname" placeholder="Email id" required="">
+        <input type="password" name="pass" id="pwwd" placeholder="Password" required="">
+        <input type="submit" value="Login"> 
+				
+    </form>
+	<br>
+	<form action="/" >
+	<input type="submit" style="background-color:red;padding:15px 32px;color: white;font-weight:bold; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)" onmouseover="this.style.background='blue'" onmouseout="this.style.background='red'" value="Back">
+    
+	</form>
+	</div>
+</body>
+
+
+</html>

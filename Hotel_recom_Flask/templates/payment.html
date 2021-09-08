@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="icon" href="{{ url_for('static', filename='image/favicon.png') }}" type="image/png">  
+        <title>Hotel Recommendation</title>
+<style>
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+* {
+  box-sizing: border-box;
+}
+.row {
+  display: -ms-flexbox; 
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+.col-25 {
+  -ms-flex: 25%; 
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; 
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%;
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  
+  box-shadow: 1px 0px 10px black;
+	background: rgb(128,128,128,0.5);
+  padding: 5px 5px 5px 5px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+width:55%;
+position:relative;
+left:23%;;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input[type=number] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+/*.button3 {
+    background-color: green; 
+    color: white;
+    border: 2px solid black;
+width:20%;
+}
+
+.button3:hover {
+    background-color: #4CAF50;
+    color: blue;
+}*/
+ .button3 {
+    background-color: white; 
+    color: black; 
+    border:1px solid #4CAF50;
+	
+}
+
+.button3:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/*logout*/
+.logoutLblPos{
+
+   position:relative;
+   right:20px;
+   top:10px;
+}
+</style>
+</head>
+<body background="static/home.jpg">
+     
+<h1 align="center" style="color:blue;"> PAYMENT PORTAL</h1>
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+
+        <form action ="/success" method="POST">
+
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text"  name="cardname" required placeholder="Name">
+            <label for="ccnum">Credit card number</label>
+            <input type="text"  name="cardnumber" required placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text"  name="expmonth" required placeholder="September">
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="number"  name="expyear" required placeholder="2018">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="number" name="cvv" required placeholder="122">
+              </div>
+              <label>
+                  Amount to be paid : {{cost}}
+              </label>
+                
+            </div>
+          </div>
+              <label class="logoutLblPos">
+          <button class="button button3" style="background-color:green;width:30%;padding:15px 32px;color: white;position:relative;left:37%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)" onmouseover="this.style.background='lightgray';this.style.color='black'" onmouseout="this.style.background='green';this.style.color='white'"><b> PAY</b></button>
+          
+		  </label>
+		  <a href="/hotelrecommendpage">Click here to terminate</a>
+        </form>
+      
+ </div>
+  </div>
+   </div>
+
+</body>
+</html>

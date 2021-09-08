@@ -1,0 +1,156 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='image/favicon.png') }}" type="image/png">  
+    <title>Hotel Recommendation</title>
+    <style>
+	#example1 {
+            background-image:url("static/home.jpg");
+            background-repeat: no-repeat;
+            background-size:cover;
+            }
+    body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial Rounded MT Bold;
+    background: url(pics/1.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+h2{
+    margin: 5px 0 0 10px;
+}
+span.bel{
+    color: white;
+}
+span.tek{
+    color: rgb(0,200,225);
+}
+.area{
+    width: 250px;
+    padding: 5px 50px;
+    margin: 10px auto;
+    background: white;
+	box-shadow: 1px 0px 10px black;
+	background: rgb(128,128,128,0.4);
+    text-align: center;
+    border-radius: 24px;
+}
+.area h1{
+    color: red;
+    font-weight: 500;
+}
+.area input[type="text"],.area input[type="email"],.area input[type='password']{
+    background: lightblue;
+    display: block;
+    margin: 14px auto;
+    text-align: left;
+    border: none;
+    padding: 7px 10px;
+    font-weight: bold;
+	color:black;
+    border-radius: 24px;
+    width: 200px;
+    outline: none;
+    border-bottom: 2px solid turquoise;
+    font-size: 12px;
+}
+.area input[type="date"]{
+    background: none;
+    display: block;
+    margin: 14px auto;
+    text-align: left;
+    border: none;
+    padding: 5px 10px;
+    color: red;
+    border-radius: 24px;
+    width: 120px;
+    outline: none;
+    border-bottom: 2px solid turquoise;
+    transform: translateX(-30%);
+    font-size: 12px;
+}
+.area p{
+    color: black;
+    transform: translateX(-32%);
+    margin:0 0 3px 0;
+    font-size: 15px;
+}
+.area label{
+    display: block;
+    text-align: left;
+    margin-left: 16px;
+    font-size: 15px;
+	color:black;
+}
+.area input[type="submit"]{
+    border: 0;
+    background-color: green;
+    display: block;
+    margin: 20px auto 5px;
+    text-align: center;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    width: 50%;
+	height:40px;
+    outline: none;
+    border: 1px solid black;
+	position:relative;
+	left:0%;
+	font-weight:bold;
+}
+
+.area input[type="submit"]:hover{
+     border:2px solid black;
+    cursor: pointer;
+	 background: lightgray;
+    color: black;
+	font-weight:bold;
+}
+p{
+    color: white;
+    margin: 0 0 10px 10px;
+	font-size:15px;
+}
+a{
+    color: lightblue;
+}
+
+</style>
+</head>
+
+<body id="example1">
+   
+	<center><img style="width:70%;height:62%;position:relative;top:50%;" src="static/head.png" alt=""></center><br>
+    <div class="area">
+	<form class="" action="/login2" method="POST">
+		<h1 style="margin-bottom:0px;">SIGN UP</h1> <hr>
+        <h4 style="color: black; background-color: red;">{{message}}</h4>
+        <input type="text" name="fname" placeholder="First name" required="">
+        <input type="text" name="lname" placeholder="Last name" required="">
+        <input type="text" name="country" placeholder="Country" required="">
+        <input type="text" name="city" placeholder="City" required="">
+         
+        <input type="email" name="email" placeholder="Email address" required="">
+        
+         
+        <p>Gender:</p>
+        <label for="male"><input id="male" type="radio" name="gender" value="Male">Male</label>
+        <label for="female"><input id="female" type="radio" name="gender" value="Female">Female</label>
+
+        <input type="password" name="pass" placeholder="Password" required="">
+        <input type="password" name="conpass" placeholder="Confirm Password" required="">
+        
+        <input type="submit" name="sub" value="Register">
+    </form>
+	<form action="/" >
+	<input type="submit" style="background-color:red;padding:10px 22px;color: white; text-align:center;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)" onmouseover="this.style.background='blue'" onmouseout="this.style.background='red'" value="Back">
+    
+	</form>
+	</div>
+</body>
+</html>

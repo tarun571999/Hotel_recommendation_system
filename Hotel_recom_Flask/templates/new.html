@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="{{ url_for('static', filename='image/favicon.png') }}" type="image/png">  
+    <title>Hotel Recommendation</title>
+<style type="text/css">
+    
+body{
+   background-image:url("static/home.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+.button3 {
+    background-color: white; 
+    color: black; 
+    border:1px solid #4CAF50;	
+}
+
+.button3:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+  .b5 {
+      
+        background-size: cover;           
+        border-radius: 4px;
+        width: 30%;
+        bottom: 10px;
+        box-shadow: 1px 0px 10px black;
+        background: rgb(128,128,128,0.4);
+        height: 400px;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+     }  
+select { 
+                appearance: none; 
+                outline: 0; 
+                background: #FFEFD5; 
+                background-image: none; 
+                width: 100%; 
+                height: 100%; 
+                color: black; 
+		font-weight:bold;
+                cursor: pointer; 
+                border:1px solid black; 
+                border-radius:3px; 
+            } 
+.select { 
+                position: relative; 
+                display: block; 
+                width: 15em; 
+                height: 2em; 
+                line-height: 3; 
+                overflow: hidden; 
+                border-radius: .25em; 
+                padding-bottom:10px; 
+                  
+            } 
+
+</style>
+</head>
+<body>
+    
+  
+ <h2 style="color:blue;padding-left:0px;margin-top:0px;"> Welcome: {{name}} </h2>
+ <center><img style="width:60%;height:63%;margin-top:-5px" src="{{ url_for('static',filename='head.png') }}" ></center>
+ <br><br><br><br>
+
+ <form method="GET" action="/exist_result" class="register-form" id="register-form" role="form">
+  
+ <div class="b5">
+<div class="center">
+  <div class="b4"><br>
+    <center><b><label style="color: blue"><h1>SELECT CITY</h1></label></b>
+
+<select id="football" class="b4" name="q1" style="height: 40px;width: 180px">
+  <option value="Bangalore">Bangalore</option>
+  <option value="Bhopal">Bhopal</option>
+  <option value="Bhubaneshwar">Bhubaneshwar</option>
+  <option value="Albany">Albany</option>
+  
+  <option value="Athens">Athens</option>
+  <option value="Augusta">Augusta</option>
+  <option value="Boise">Boise</option>
+
+</select></center></div></div>
+
+<div class="center">
+  <div class="b4"> 
+  <center><b><label style="color: blue"><h1>FILTER BY </h1></label></b> 
+
+<select id="football" class="b4" name="q2" style="height: 40px;width: 180px">
+  
+  <option value="rating">Rating</option>
+  <option value="costhtl">COST (HIGH TO LOW)</option>
+  <option value="costlth">COST (LOW TO HIGH)</option>
+  
+</select></center></div></div><br><br>
+
+<div align="center">
+    <div class="">
+   <button class="button3" type="submit" height="200" width="200" style="font-weight:bold;background-color:green;padding:15px 32px;color: white;position:relative; bottom:10%; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)" onmouseover="this.style.background='lightgray';this.style.color='black'" onmouseout="this.style.background='green';this.style.color='white'">Submit</button>
+
+</div>
+</div>
+</div>
+ </form>
+</body>
+</html>

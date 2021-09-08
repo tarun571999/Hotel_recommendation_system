@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+			<link rel="icon" href="{{ url_for('static', filename='image/favicon.png') }}" type="image/png">  
+				<title>Hotel Recommendation</title>
+				
+					<style type="text/css">
+						body {
+						background-image:url("static/home.jpg");
+						background-repeat: no-repeat;
+						background-size:cover;
+						}
+						/*h4{
+						color: white;
+
+						}*/
+						.a1{
+						float:left;
+						position:absolute;
+						left:30%;
+						top:30%;
+						color:blue;
+						}
+						.c1{
+						float:right;
+						position:absolute;
+						right:30%;
+						top:30%;
+						color:blue;
+						}
+
+						#style:hover{
+						box-shadow: 1px 0px 10px black;
+						}
+					</style>
+				</head>
+				<body>
+
+					<center><img style="width:70%;height:62%;position:relative;top:50%;" src="static/head.png" alt=""></center>
+						<br><br><br><br><br><br>
+												<div class="a1">
+													<a href="/signup"> <img id="style" src="static/newuser.png" width="150" heigth="150"  alt=" "></a>
+														<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New User</h3></div>
+													<div class="c1">
+														<a href="/login" > <img id="style" src="static/userpic.jpg"  width="150" heigth="150" alt=" "></a>
+															<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Existing User</h3></div>
+
+													</body>
+												</html>

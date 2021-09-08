@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <style>
+        body{
+        background-image:url("static/home.jpg");
+        background-repeat: no-repeat;
+        background-size:cover;
+        }  
+	#effect:hover{
+		box-shadow: 1px 0px 10px black;}
+	
+	.log{
+		background-color:red;
+		color: white;
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+		padding:10px 28px;
+        margin-right: 10px;
+        margin-top: 10px;
+	}
+	.filter {
+    background-color: green; 
+    color: white; 
+	box-shadow: 1px 1px 5px black;
+    border:1px solid #4CAF50;	
+	padding:10px 28px;
+    margin-right: 10px;
+    margin-top: 10px;
+	}
+
+.filter:hover {
+    background-color: white;
+    color: black;
+}
+
+	.log:hover	{
+		background-color:skyblue;
+		font-weight:bold;
+		cursor:pointer;
+	}
+        .tabcontent3 {
+                    float:right;
+                    padding: 0px 12px;
+                    width: 100%;      
+                    background: rgba(192,192,192,0.7);
+		    border-radius:15px;
+		    box-shadow:1px 0px 10px;					
+                }					
+        </style>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+       
+        <link rel="icon" href="{{ url_for('static', filename='image/favicon.png') }}" type="image/png">  
+        <title>Hotel Recommendation</title>
+    
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+        
+      
+    </head>
+    <body background-image='url("static/home.jpg")'>
+        
+  
+    <form align="right" action="/logout">
+            <span style="float:right;position:absolute;right:0%;"><button class="log">LOG OUT</button> </span> 
+     </form>
+    <h4 style="color:blue;padding-top:10px;padding-left:5px;"> Welcome: {{name}} </h4>
+  		
+    <center><img style="width:60%;height:62%;position:relative;top:50%;" src="static/head.png" alt=""></center> <br><br>   
+    <div class="tabcontent3" style="width:82%;position:relative;right:8.5%;">
+         <form action="/exist" align="right" method="GET">
+         <span style="float:right;position:absolute;right:0%;"><button class="filter">FILTER</button> </span>                     
+     </form> 
+     
+             <br>  
+             <h2 style="color:blue">Recommended hotels for you,</h2> <br>
+                 
+                <h3>BASED ON THE CITY SELECTED</h3><br>
+		{% for i in hotels1 %}   
+                <div style="float:left;padding-left: 43px;">
+                    <img id="effect" src="static/image/blog-2.jpg"  height="200" width="300"><br>
+                               <label> Name: {{ i[0]}}  </label> <br>
+                               <label> Location: {{ i[1] }}  </label> <br>
+                               <label> Cost: {{ i[2]/2 }}  {{i[4]}}</label> <br>
+                               <label> Rating: {{ i[3] }}  </label> <br>
+                               <form action ="/display" method="GET">
+                                    <button class="tha" type="submit" name="h_name" value = "{{i[0]}}" height="200" width="400" style="margin-bottom:10px;font-weight:bold;" onmouseover="this.style.background='green';this.style.color='white'" onmouseout="this.style.background='lightgray';this.style.color='black'" >Proceed</button>
+                               </form>               
+            </div>
+            
+            {% endfor %}
+          
+            {% if hotels  %}
+                   
+                
+                <h3>RECOMMENDED RESULTS</h3><br>
+                   
+		{% for i in hotels %}   
+                <div style="float:left;padding-left: 43px;">
+                    <img id="effect" src="static/image/blog-1.jpg"  height="200" width="300"><br>
+                               <label> Name: {{ i[0]}}  </label> <br>
+                               <label> Location: {{ i[1] }}  </label> <br>
+                               <form action ="/display" method="GET">
+                                        <button class="tha" type="submit" name="h_name" value = "{{i[0]}}" height="200" width="400" style="margin-bottom:10px;font-weight:bold;" onmouseover="this.style.background='green';this.style.color='white'" onmouseout="this.style.background='lightgray';this.style.color='black'">Proceed</button>
+                               </form> 
+                                
+                </div>
+                
+       
+            {% endfor %}  
+            {% endif %}  
+            
+    </div>
+                   <br><br>     
+    </body>
+</html>

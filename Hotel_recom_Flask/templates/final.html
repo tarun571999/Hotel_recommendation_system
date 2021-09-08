@@ -1,0 +1,80 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		 <link rel="icon" href="{{ url_for('static', filename='image/favicon.png') }}" type="image/png">  
+        <title>Hotel Recommendation</title>
+       <style> 
+     .button3 {
+    background-color: white; 
+    color: black; 
+    border:1px solid black;
+	
+}
+
+.button3:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+body{
+background-image:url("static/home.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+h2{
+color:blue;
+position:relative;
+left:00%;
+}
+ .ticket {
+      background:lightgrey ;
+      background-size: cover;           
+      border-radius: 4px;
+      width: 50%;
+      bottom: 10px;
+      box-shadow: 1px 0px 10px black ;
+    height: 100%;
+    
+    top:0;
+    bottom: 0;
+    left: 0%;
+    right: 0;
+    margin: auto;
+     }  
+    </style>
+    </head>
+    <body>
+        <br><br>
+        
+        <br><br><br>
+        <div class="ticket"> 
+            <br><br><br>
+         <h3 style="color:blue" ><u></u></h3>
+        
+         
+        <center><h2>Congratulations {{name}}, Your Payment is Successfully Completed!!</h2><center>
+       
+          <h3 style="color:blue" align="left"></h3>
+        
+          <br><br>
+		  <form action="/hotelrecommendpage">
+		  		  <center><button style="background-color:green;padding:15px 40px;color: white; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)" class="button button3" onmouseover="this.style.background='lightgray';this.style.color='black'" onmouseout="this.style.background='green';this.style.color='white'"><b> HOME </b></button></center>
+
+		  </form><br>
+          <form action="/logout">              
+			<center> <button style="background-color:red;padding:15px 32px;color: white; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)" class="button button3" onmouseover="this.style.background='blue'" onmouseout="this.style.background='red'"><b> LOGOUT </b></button></center>
+		  <br><br>
+          </form>
+         </div>
+         
+         
+         
+         
+          
+         
+         
+
+    </body>
+</html>
